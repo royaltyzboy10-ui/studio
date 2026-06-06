@@ -1,0 +1,47 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "nba-hero",
+      "description": "NBA Game Action",
+      "imageUrl": "https://picsum.photos/seed/nba1/1200/600",
+      "imageHint": "nba basketball"
+    },
+    {
+      "id": "nfl-hero",
+      "description": "NFL Football Game",
+      "imageUrl": "https://picsum.photos/seed/nfl1/1200/600",
+      "imageHint": "nfl football"
+    },
+    {
+      "id": "soccer-hero",
+      "description": "Champions League Match",
+      "imageUrl": "https://picsum.photos/seed/soccer1/1200/600",
+      "imageHint": "soccer match"
+    },
+    {
+      "id": "f1-hero",
+      "description": "Formula 1 Racing",
+      "imageUrl": "https://picsum.photos/seed/f1/1200/600",
+      "imageHint": "formula one"
+    },
+    {
+      "id": "player-1",
+      "description": "Athlete Portrait",
+      "imageUrl": "https://picsum.photos/seed/player1/400/400",
+      "imageHint": "athlete portrait"
+    },
+    {
+      "id": "highlight-1",
+      "description": "Slam Dunk Highlight",
+      "imageUrl": "https://picsum.photos/seed/dunk/400/700",
+      "imageHint": "basketball dunk"
+    },
+    {
+      "id": "highlight-2",
+      "description": "Goal Celebration",
+      "imageUrl": "https://picsum.photos/seed/goal/400/700",
+      "imageHint": "soccer goal"
+    }
+  ]
+}
