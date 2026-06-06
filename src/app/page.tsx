@@ -6,19 +6,19 @@ import { ZportyChat } from "@/components/ai/ZportyChat";
 import { MediaScroll } from "@/components/media/MediaScroll";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Newspaper, Trophy, Users, Zap, TrophyIcon } from "lucide-react";
+import { Calendar, Newspaper, Trophy, Users, Zap, TrophyIcon, PlayCircle } from "lucide-react";
 
 const RECENT_NEWS = [
-  { id: 1, tag: "TRADE", title: "Damian Lillard to the Bucks in a Blockbuster 3-Team Deal", time: "2h ago" },
-  { id: 2, tag: "INJURY", title: "Aaron Rodgers Out for Season with Torn Achilles", time: "5h ago" },
-  { id: 3, tag: "MLB", title: "Shohei Ohtani Makes History with Unprecedented 50/50 Season", time: "8h ago" },
-  { id: 4, tag: "SOCCER", title: "Manchester City Secure 4th Consecutive Premier League Title", time: "12h ago" },
+  { id: 1, tag: "FINALS", title: "Wembanyama vs Brunson: The Battle for the Larry O'Brien Trophy", time: "1h ago" },
+  { id: 2, tag: "TRADE", title: "Knicks Eyeing Defensive Depth Ahead of Final Showdown", time: "3h ago" },
+  { id: 3, tag: "INJURY", title: "Jeremy Sochan Questionable for Game 7 with Ankle Sprain", time: "5h ago" },
+  { id: 4, tag: "MLB", title: "Shohei Ohtani Makes History with Unprecedented 50/50 Season", time: "12h ago" },
 ];
 
 const TOP_TEAMS = [
-  { rank: 1, team: "Golden State Warriors", record: "45-12", color: "#1D428A" },
-  { rank: 2, team: "Boston Celtics", record: "44-13", color: "#007A33" },
-  { rank: 3, team: "Denver Nuggets", record: "42-15", color: "#0E2240" },
+  { rank: 1, team: "San Antonio Spurs", record: "45-12", color: "#000000" },
+  { rank: 2, team: "New York Knicks", record: "44-13", color: "#F58426" },
+  { rank: 3, team: "Boston Celtics", record: "42-15", color: "#007A33" },
 ];
 
 export default function Home() {
@@ -65,18 +65,18 @@ export default function Home() {
                 <CardContent className="space-y-4">
                   <div className="bg-secondary/40 p-4 rounded-xl space-y-3">
                     <div className="flex justify-between items-center text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                      <span>Tonight's Poll</span>
+                      <span>Finals Poll</span>
                       <span className="text-accent">Live</span>
                     </div>
-                    <p className="font-bold text-sm">Who wins Game 3 between Celtics and Heat?</p>
+                    <p className="font-bold text-sm">Who wins Game 7 between Spurs and Knicks?</p>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between p-2 rounded-lg bg-background/50 cursor-pointer hover:bg-primary/20 transition-colors border border-white/5">
-                        <span className="text-sm font-bold">Boston Celtics</span>
-                        <span className="text-xs font-medium text-muted-foreground">65%</span>
+                        <span className="text-sm font-bold">San Antonio Spurs</span>
+                        <span className="text-xs font-medium text-muted-foreground">48%</span>
                       </div>
                       <div className="flex items-center justify-between p-2 rounded-lg bg-background/50 cursor-pointer hover:bg-primary/20 transition-colors border border-white/5">
-                        <span className="text-sm font-bold">Miami Heat</span>
-                        <span className="text-xs font-medium text-muted-foreground">35%</span>
+                        <span className="text-sm font-bold">New York Knicks</span>
+                        <span className="text-xs font-medium text-muted-foreground">52%</span>
                       </div>
                     </div>
                   </div>
@@ -136,17 +136,17 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-sm">Waiver Wire Alert</h4>
-                      <p className="text-xs text-muted-foreground">Pick up Christian Wood. Usage rate increased by 15% after Davis injury.</p>
+                      <p className="text-xs text-muted-foreground">Pick up Miles McBride. Minutes expected to spike if Brunson's usage stays high.</p>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     <div className="bg-background/40 p-2 rounded-lg text-center border border-white/5">
                       <p className="text-[10px] font-bold text-muted-foreground uppercase">Projected</p>
-                      <p className="text-lg font-headline font-black text-primary">24.5</p>
+                      <p className="text-lg font-headline font-black text-primary">28.2</p>
                     </div>
                     <div className="bg-background/40 p-2 rounded-lg text-center border border-white/5">
                       <p className="text-[10px] font-bold text-muted-foreground uppercase">Value Rank</p>
-                      <p className="text-lg font-headline font-black text-accent">#4</p>
+                      <p className="text-lg font-headline font-black text-accent">#1</p>
                     </div>
                   </div>
                 </CardContent>
@@ -172,24 +172,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
-
-function PlayCircle(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <polygon points="10 8 16 12 10 16 10 8" />
-    </svg>
-  )
 }

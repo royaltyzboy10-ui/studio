@@ -35,10 +35,10 @@ export function FeaturedContent() {
           <Badge variant="outline" className="border-accent text-accent bg-accent/10 font-headline uppercase font-bold text-[10px] px-3">Live Now</Badge>
         </div>
         <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4 tracking-tighter leading-none">
-          NBA FINALS: LAKERS VS WARRIORS GAME 7
+          NBA FINALS: SPURS VS KNICKS GAME 7
         </h1>
         <p className="text-muted-foreground mb-6 line-clamp-2 max-w-lg">
-          The ultimate showdown in the West. LeBron and Curry face off one last time for the title. Stay tuned for live updates, highlights, and AI analysis.
+          The ultimate showdown for the Larry O'Brien Trophy. Victor Wembanyama and Jalen Brunson face off in a historic Game 7 at the Garden. Stay tuned for live updates, highlights, and AI analysis.
         </p>
         <div className="flex gap-4">
           <Button size="lg" className="font-headline font-bold">WATCH LIVE</Button>
@@ -53,7 +53,7 @@ export function FeaturedContent() {
                   <Trophy className="h-6 w-6 text-primary" /> Game 7 Statistics
                 </DialogTitle>
                 <DialogDescription className="text-muted-foreground italic">
-                  Lakers vs Warriors - Crypto.com Arena, Los Angeles
+                  Spurs vs Knicks - Madison Square Garden, New York
                 </DialogDescription>
               </DialogHeader>
               
@@ -64,7 +64,7 @@ export function FeaturedContent() {
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
                         <span>Field Goal %</span>
-                        <span className="font-bold">LAL 48% - GSW 45%</span>
+                        <span className="font-bold">SAS 48% - NYK 45%</span>
                       </div>
                       <div className="h-2 bg-secondary rounded-full overflow-hidden flex">
                         <div className="bg-primary h-full w-[48%]" />
@@ -74,7 +74,7 @@ export function FeaturedContent() {
                     <div className="space-y-1">
                       <div className="flex justify-between text-xs">
                         <span>3-Point %</span>
-                        <span className="font-bold">LAL 34% - GSW 42%</span>
+                        <span className="font-bold">SAS 34% - NYK 42%</span>
                       </div>
                       <div className="h-2 bg-secondary rounded-full overflow-hidden flex">
                         <div className="bg-primary h-full w-[34%]" />
@@ -89,12 +89,12 @@ export function FeaturedContent() {
                   <div className="bg-secondary/30 p-4 rounded-xl space-y-3 border border-white/5">
                     <div className="flex items-center justify-between">
                       <div className="text-center">
-                        <p className="text-[10px] font-bold text-muted-foreground uppercase">LeBron James</p>
+                        <p className="text-[10px] font-bold text-muted-foreground uppercase">V. Wembanyama</p>
                         <p className="text-lg font-black font-headline">32 PTS</p>
                       </div>
                       <span className="text-xs font-bold text-muted-foreground italic">VS</span>
                       <div className="text-center">
-                        <p className="text-[10px] font-bold text-muted-foreground uppercase">Stephen Curry</p>
+                        <p className="text-[10px] font-bold text-muted-foreground uppercase">Jalen Brunson</p>
                         <p className="text-lg font-black font-headline text-accent">35 PTS</p>
                       </div>
                     </div>
@@ -107,7 +107,7 @@ export function FeaturedContent() {
               </div>
 
               <div className="flex justify-end gap-3 mt-4">
-                <Button variant="ghost" onClick={() => {}} className="text-xs font-bold">BOX SCORE</Button>
+                <Button variant="ghost" className="text-xs font-bold">BOX SCORE</Button>
                 <Button className="bg-primary text-primary-foreground font-bold">FULL PLAY-BY-PLAY</Button>
               </div>
             </DialogContent>
@@ -123,7 +123,7 @@ export function FeaturedContent() {
           <div className="space-y-3">
             <div className="flex justify-between items-center text-sm">
               <span className="text-muted-foreground">Win Prob</span>
-              <span className="font-bold">LAL 52%</span>
+              <span className="font-bold">SAS 52%</span>
             </div>
             <div className="w-full bg-secondary h-1.5 rounded-full overflow-hidden">
               <div className="bg-primary h-full w-[52%]" />
@@ -133,11 +133,11 @@ export function FeaturedContent() {
         
         <div className="glass-card p-4 w-64 rounded-xl">
           <h4 className="flex items-center gap-2 font-headline font-bold text-xs mb-3 text-primary uppercase tracking-widest">
-            <Calendar className="h-3 w-3" /> Upcoming UCL
+            <Calendar className="h-3 w-3" /> Next Series
           </h4>
           <div className="space-y-2">
-            <p className="text-sm font-bold">Real Madrid vs Man City</p>
-            <p className="text-xs text-muted-foreground">Tomorrow, 3:00 PM ET</p>
+            <p className="text-sm font-bold">Summer League Kickoff</p>
+            <p className="text-xs text-muted-foreground">July 12, 9:00 PM ET</p>
           </div>
         </div>
       </div>

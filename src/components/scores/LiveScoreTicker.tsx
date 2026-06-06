@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 
 const MOCK_GAMES = [
-  { league: "NBA", home: "LAL", away: "GSW", homeScore: 102, awayScore: 105, status: "Q4 2:14" },
-  { league: "NBA", home: "BOS", away: "NYK", homeScore: 88, awayScore: 92, status: "FINAL" },
+  { league: "NBA", home: "SAS", away: "NYK", homeScore: 102, awayScore: 105, status: "Q4 2:14" },
+  { league: "NBA", home: "BOS", away: "DAL", homeScore: 88, awayScore: 92, status: "FINAL" },
   { league: "NFL", home: "KC", away: "SF", homeScore: 24, awayScore: 21, status: "Q3 11:05" },
   { league: "MLB", home: "NYY", away: "LAD", homeScore: 3, awayScore: 1, status: "BOT 7" },
   { league: "UCL", home: "RMA", away: "MCY", homeScore: 2, awayScore: 2, status: "82'" },
