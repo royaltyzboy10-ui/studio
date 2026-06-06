@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar";
 import { LiveScoreTicker } from "@/components/scores/LiveScoreTicker";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Zap, Trophy, Timer, ChevronRight, BarChart3 } from "lucide-react";
 import { zportyAIGamePrediction } from "@/ai/flows/zporty-ai-game-prediction";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 import {
   Dialog,
   DialogContent,
@@ -21,21 +23,21 @@ import {
 
 const SCORES_DATA = {
   NBA: [
-    { id: "nba-1", home: "San Antonio Spurs", away: "New York Knicks", homeScore: 102, awayScore: 105, status: "Q4 2:14", details: "Game 7 - Finals" },
-    { id: "nba-2", home: "Boston Celtics", away: "Dallas Mavericks", homeScore: 112, awayScore: 98, status: "FINAL", details: "Eastern Conference Semis" },
-    { id: "nba-3", home: "Phoenix Suns", away: "Denver Nuggets", homeScore: 85, awayScore: 92, status: "Q3 4:45", details: "Regular Season" },
+    { id: "nba-1", home: "San Antonio Spurs", away: "New York Knicks", homeScore: 102, awayScore: 105, status: "Q4 2:14", details: "Game 7 - Finals", homeHint: "spurs basketball", awayHint: "knicks basketball" },
+    { id: "nba-2", home: "Boston Celtics", away: "Dallas Mavericks", homeScore: 112, awayScore: 98, status: "FINAL", details: "Eastern Conference Semis", homeHint: "celtics basketball", awayHint: "mavericks basketball" },
+    { id: "nba-3", home: "Phoenix Suns", away: "Denver Nuggets", homeScore: 85, awayScore: 92, status: "Q3 4:45", details: "Regular Season", homeHint: "suns basketball", awayHint: "nuggets basketball" },
   ],
   NFL: [
-    { id: "nfl-1", home: "Kansas City Chiefs", away: "San Francisco 49ers", homeScore: 24, awayScore: 21, status: "Q3 11:05", details: "Sunday Night Football" },
-    { id: "nfl-2", home: "Buffalo Bills", away: "Miami Dolphins", homeScore: 31, awayScore: 34, status: "FINAL", details: "Division Rivalry" },
+    { id: "nfl-1", home: "Kansas City Chiefs", away: "San Francisco 49ers", homeScore: 24, awayScore: 21, status: "Q3 11:05", details: "Sunday Night Football", homeHint: "chiefs football", awayHint: "49ers football" },
+    { id: "nfl-2", home: "Buffalo Bills", away: "Miami Dolphins", homeScore: 31, awayScore: 34, status: "FINAL", details: "Division Rivalry", homeHint: "bills football", awayHint: "dolphins football" },
   ],
   MLB: [
-    { id: "mlb-1", home: "New York Yankees", away: "Los Angeles Dodgers", homeScore: 4, awayScore: 2, status: "FINAL", details: "Interleague Play" },
-    { id: "mlb-2", home: "Chicago Cubs", away: "St. Louis Cardinals", homeScore: 1, awayScore: 5, status: "BOT 7", details: "NL Central" },
+    { id: "mlb-1", home: "New York Yankees", away: "Los Angeles Dodgers", homeScore: 4, awayScore: 2, status: "FINAL", details: "Interleague Play", homeHint: "yankees baseball", awayHint: "dodgers baseball" },
+    { id: "mlb-2", home: "Chicago Cubs", away: "St. Louis Cardinals", homeScore: 1, awayScore: 5, status: "BOT 7", details: "NL Central", homeHint: "cubs baseball", awayHint: "cardinals baseball" },
   ],
   SOCCER: [
-    { id: "soc-1", home: "Real Madrid", away: "Manchester City", homeScore: 2, awayScore: 2, status: "82'", details: "Champions League" },
-    { id: "soc-2", home: "Arsenal", away: "Bayern Munich", homeScore: 1, awayScore: 0, status: "HT", details: "Champions League" },
+    { id: "soc-1", home: "Real Madrid", away: "Manchester City", homeScore: 2, awayScore: 2, status: "82'", details: "Champions League", homeHint: "real madrid", awayHint: "manchester city" },
+    { id: "soc-2", home: "Arsenal", away: "Bayern Munich", homeScore: 1, awayScore: 0, status: "HT", details: "Champions League", homeHint: "arsenal", awayHint: "bayern munich" },
   ]
 };
 
@@ -109,8 +111,15 @@ export default function ScoresPage() {
                       <div className="flex items-center justify-between gap-8">
                         {/* Away Team */}
                         <div className="flex flex-col items-center gap-2 flex-1">
-                          <div className="h-16 w-16 rounded-full bg-secondary/50 flex items-center justify-center font-headline font-black text-2xl text-muted-foreground/50 italic">
-                            {game.away.substring(0, 1)}
+                          <div className="h-16 w-16 rounded-full bg-secondary/50 relative overflow-hidden flex items-center justify-center">
+                            <Image 
+                              src={`https://picsum.photos/seed/${game.away}/64/64`}
+                              alt={game.away}
+                              width={64}
+                              height={64}
+                              className="object-cover"
+                              data-ai-hint={game.awayHint}
+                            />
                           </div>
                           <span className="font-bold text-sm text-center line-clamp-1">{game.away}</span>
                           <span className="text-3xl font-black font-headline">{game.awayScore}</span>
@@ -123,8 +132,15 @@ export default function ScoresPage() {
 
                         {/* Home Team */}
                         <div className="flex flex-col items-center gap-2 flex-1">
-                          <div className="h-16 w-16 rounded-full bg-secondary/50 flex items-center justify-center font-headline font-black text-2xl text-muted-foreground/50 italic">
-                            {game.home.substring(0, 1)}
+                          <div className="h-16 w-16 rounded-full bg-secondary/50 relative overflow-hidden flex items-center justify-center">
+                            <Image 
+                              src={`https://picsum.photos/seed/${game.home}/64/64`}
+                              alt={game.home}
+                              width={64}
+                              height={64}
+                              className="object-cover"
+                              data-ai-hint={game.homeHint}
+                            />
                           </div>
                           <span className="font-bold text-sm text-center line-clamp-1">{game.home}</span>
                           <span className="text-3xl font-black font-headline text-primary">{game.homeScore}</span>

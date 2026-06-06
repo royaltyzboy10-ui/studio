@@ -16,16 +16,16 @@ import {
 } from "@/components/ui/dialog";
 
 export function FeaturedContent() {
-  const featured = PlaceHolderImages.find(img => img.id === "nba-hero");
+  const featured = PlaceHolderImages.find(img => img.id === "nba-finals-hero");
 
   return (
     <section className="relative h-[400px] w-full rounded-2xl overflow-hidden group">
       <Image 
-        src={featured?.imageUrl || "https://picsum.photos/seed/sports/1200/600"}
-        alt="Featured Sports"
+        src={featured?.imageUrl || "https://picsum.photos/seed/nba-final/1200/600"}
+        alt="NBA Finals Spurs vs Knicks"
         fill
         className="object-cover transition-transform duration-700 group-hover:scale-105"
-        data-ai-hint="nba basketball game"
+        data-ai-hint="nba basketball"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       
@@ -37,7 +37,7 @@ export function FeaturedContent() {
         <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4 tracking-tighter leading-none">
           NBA FINALS: SPURS VS KNICKS GAME 7
         </h1>
-        <p className="text-muted-foreground mb-6 line-clamp-2 max-w-lg">
+        <p className="text-muted-foreground mb-6 line-clamp-2 max-lg">
           The ultimate showdown for the Larry O'Brien Trophy. Victor Wembanyama and Jalen Brunson face off in a historic Game 7 at the Garden. Stay tuned for live updates, highlights, and AI analysis.
         </p>
         <div className="flex gap-4">
