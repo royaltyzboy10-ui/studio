@@ -5,7 +5,15 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { PlayCircle, TrendingUp, Calendar } from "lucide-react";
+import { PlayCircle, TrendingUp, Calendar, Trophy, Users, Timer } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export function FeaturedContent() {
   const featured = PlaceHolderImages.find(img => img.id === "nba-hero");
@@ -34,7 +42,76 @@ export function FeaturedContent() {
         </p>
         <div className="flex gap-4">
           <Button size="lg" className="font-headline font-bold">WATCH LIVE</Button>
-          <Button size="lg" variant="secondary" className="font-headline font-bold">GAME DETAILS</Button>
+          
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button size="lg" variant="secondary" className="font-headline font-bold">GAME DETAILS</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[600px] glass-card border-primary/20">
+              <DialogHeader>
+                <DialogTitle className="font-headline text-2xl font-bold flex items-center gap-2">
+                  <Trophy className="h-6 w-6 text-primary" /> Game 7 Statistics
+                </DialogTitle>
+                <DialogDescription className="text-muted-foreground italic">
+                  Lakers vs Warriors - Crypto.com Arena, Los Angeles
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-4">
+                <div className="space-y-4">
+                  <h4 className="font-bold text-sm uppercase tracking-wider text-primary">Team Comparison</h4>
+                  <div className="space-y-3">
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs">
+                        <span>Field Goal %</span>
+                        <span className="font-bold">LAL 48% - GSW 45%</span>
+                      </div>
+                      <div className="h-2 bg-secondary rounded-full overflow-hidden flex">
+                        <div className="bg-primary h-full w-[48%]" />
+                        <div className="bg-accent h-full w-[45%]" />
+                      </div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="flex justify-between text-xs">
+                        <span>3-Point %</span>
+                        <span className="font-bold">LAL 34% - GSW 42%</span>
+                      </div>
+                      <div className="h-2 bg-secondary rounded-full overflow-hidden flex">
+                        <div className="bg-primary h-full w-[34%]" />
+                        <div className="bg-accent h-full w-[42%]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h4 className="font-bold text-sm uppercase tracking-wider text-accent">Key Matchup</h4>
+                  <div className="bg-secondary/30 p-4 rounded-xl space-y-3 border border-white/5">
+                    <div className="flex items-center justify-between">
+                      <div className="text-center">
+                        <p className="text-[10px] font-bold text-muted-foreground uppercase">LeBron James</p>
+                        <p className="text-lg font-black font-headline">32 PTS</p>
+                      </div>
+                      <span className="text-xs font-bold text-muted-foreground italic">VS</span>
+                      <div className="text-center">
+                        <p className="text-[10px] font-bold text-muted-foreground uppercase">Stephen Curry</p>
+                        <p className="text-lg font-black font-headline text-accent">35 PTS</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <Timer className="h-3 w-3" />
+                    <span>Time Remaining: 2:14 Q4</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-end gap-3 mt-4">
+                <Button variant="ghost" onClick={() => {}} className="text-xs font-bold">BOX SCORE</Button>
+                <Button className="bg-primary text-primary-foreground font-bold">FULL PLAY-BY-PLAY</Button>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
 
