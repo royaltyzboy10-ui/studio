@@ -28,12 +28,12 @@ export default function Home() {
       </div>
 
       {/* Main Content */}
-      <main className="relative z-10 container px-4 flex flex-col items-center text-center space-y-12">
+      <main className="relative z-10 container px-4 flex flex-col items-center text-center space-y-12 py-20">
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-black uppercase tracking-[0.2em] mb-4">
             <Zap className="h-3 w-3 fill-accent" /> Season 2 Is Here
           </div>
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white italic">
+          <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white italic leading-tight">
             WELCOME TO <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-accent animate-gradient-x">
               ZAONER II
@@ -66,29 +66,29 @@ export default function Home() {
             <div className="p-3 bg-blue-500/20 rounded-xl text-blue-400">
               <Trophy className="h-6 w-6" />
             </div>
-            <h3 className="font-black italic text-lg text-white">GLOBAL LEAGUE</h3>
+            <h3 className="font-black italic text-lg text-white uppercase tracking-wider">Global League</h3>
             <p className="text-sm text-white/50">Compete with players worldwide for the #1 spot.</p>
           </div>
           <div className="glass-card p-6 rounded-2xl flex flex-col items-center space-y-3">
             <div className="p-3 bg-purple-500/20 rounded-xl text-purple-400">
               <Zap className="h-6 w-6" />
             </div>
-            <h3 className="font-black italic text-lg text-white">SKILL SYSTEM</h3>
+            <h3 className="font-black italic text-lg text-white uppercase tracking-wider">Skill System</h3>
             <p className="text-sm text-white/50">Unlock legendary moves and boost your attributes.</p>
           </div>
           <div className="glass-card p-6 rounded-2xl flex flex-col items-center space-y-3">
             <div className="p-3 bg-accent/20 rounded-xl text-accent">
               <Target className="h-6 w-6" />
             </div>
-            <h3 className="font-black italic text-lg text-white">TEAM PLAY</h3>
+            <h3 className="font-black italic text-lg text-white uppercase tracking-wider">Team Play</h3>
             <p className="text-sm text-white/50">Form crews and dominate the concrete jungle.</p>
           </div>
         </div>
       </main>
 
       {/* Footer Branding */}
-      <footer className="relative z-10 mt-20 pb-8 opacity-30">
-        <span className="text-sm font-bold tracking-[0.5em] text-white">AUTHENTIC STREET SOUL</span>
+      <footer className="relative z-10 mt-10 pb-12 opacity-30 text-center">
+        <span className="text-sm font-bold tracking-[0.5em] text-white uppercase">Authentic Street Soul</span>
       </footer>
     </div>
   );
