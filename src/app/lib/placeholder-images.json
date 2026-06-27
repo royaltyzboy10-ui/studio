@@ -1,4 +1,3 @@
-
 {
   "placeholderImages": [
     {
@@ -8,16 +7,40 @@
       "imageHint": "nba basketball"
     },
     {
-      "id": "knicks-logo-placeholder",
+      "id": "sas-logo",
+      "description": "San Antonio Spurs Logo",
+      "imageUrl": "https://picsum.photos/seed/spurs/400/400",
+      "imageHint": "spurs basketball"
+    },
+    {
+      "id": "nyk-logo",
       "description": "New York Knicks Logo",
       "imageUrl": "https://picsum.photos/seed/knicks/400/400",
       "imageHint": "knicks basketball"
     },
     {
-      "id": "spurs-logo-placeholder",
-      "description": "San Antonio Spurs Logo",
-      "imageUrl": "https://picsum.photos/seed/spurs/400/400",
-      "imageHint": "spurs basketball"
+      "id": "bos-logo",
+      "description": "Boston Celtics Logo",
+      "imageUrl": "https://picsum.photos/seed/celtics/400/400",
+      "imageHint": "celtics basketball"
+    },
+    {
+      "id": "dal-logo",
+      "description": "Dallas Mavericks Logo",
+      "imageUrl": "https://picsum.photos/seed/mavs/400/400",
+      "imageHint": "mavericks basketball"
+    },
+    {
+      "id": "kc-logo",
+      "description": "Kansas City Chiefs Logo",
+      "imageUrl": "https://picsum.photos/seed/chiefs/400/400",
+      "imageHint": "chiefs football"
+    },
+    {
+      "id": "sf-logo",
+      "description": "San Francisco 49ers Logo",
+      "imageUrl": "https://picsum.photos/seed/49ers/400/400",
+      "imageHint": "49ers football"
     },
     {
       "id": "nfl-hero",

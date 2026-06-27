@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/layout/Navbar";
 import { LiveScoreTicker } from "@/components/scores/LiveScoreTicker";
 import { FeaturedContent } from "@/components/feed/FeaturedContent";
@@ -6,7 +5,7 @@ import { ZportyChat } from "@/components/ai/ZportyChat";
 import { MediaScroll } from "@/components/media/MediaScroll";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Newspaper, Trophy, Users, Zap, TrophyIcon, PlayCircle } from "lucide-react";
+import { Calendar, Newspaper, Trophy, Users, Zap, PlayCircle } from "lucide-react";
 
 const RECENT_NEWS = [
   { id: 1, tag: "FINALS", title: "Wembanyama vs Brunson: The Battle for the Larry O'Brien Trophy", time: "1h ago" },
@@ -106,7 +105,7 @@ export default function Home() {
 
             <section className="space-y-4">
               <h2 className="font-headline font-bold text-xl flex items-center gap-2">
-                <TrophyIcon className="h-5 w-5 text-primary" /> Power Rankings
+                <Trophy className="h-5 w-5 text-primary" /> Power Rankings
               </h2>
               <Card className="glass-card overflow-hidden">
                 <CardContent className="p-0">

@@ -1,3 +1,76 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "nba-finals-hero",
+      "description": "NBA Finals Action Spurs vs Knicks",
+      "imageUrl": "https://picsum.photos/seed/nbafinal/1200/600",
+      "imageHint": "nba basketball"
+    },
+    {
+      "id": "sas-logo",
+      "description": "San Antonio Spurs Logo",
+      "imageUrl": "https://picsum.photos/seed/spurs/400/400",
+      "imageHint": "spurs basketball"
+    },
+    {
+      "id": "nyk-logo",
+      "description": "New York Knicks Logo",
+      "imageUrl": "https://picsum.photos/seed/knicks/400/400",
+      "imageHint": "knicks basketball"
+    },
+    {
+      "id": "bos-logo",
+      "description": "Boston Celtics Logo",
+      "imageUrl": "https://picsum.photos/seed/celtics/400/400",
+      "imageHint": "celtics basketball"
+    },
+    {
+      "id": "dal-logo",
+      "description": "Dallas Mavericks Logo",
+      "imageUrl": "https://picsum.photos/seed/mavs/400/400",
+      "imageHint": "mavericks basketball"
+    },
+    {
+      "id": "kc-logo",
+      "description": "Kansas City Chiefs Logo",
+      "imageUrl": "https://picsum.photos/seed/chiefs/400/400",
+      "imageHint": "chiefs football"
+    },
+    {
+      "id": "sf-logo",
+      "description": "San Francisco 49ers Logo",
+      "imageUrl": "https://picsum.photos/seed/49ers/400/400",
+      "imageHint": "49ers football"
+    },
+    {
+      "id": "nfl-hero",
+      "description": "NFL Football Game",
+      "imageUrl": "https://picsum.photos/seed/nflgame/1200/600",
+      "imageHint": "nfl football"
+    },
+    {
+      "id": "soccer-hero",
+      "description": "Champions League Match",
+      "imageUrl": "https://picsum.photos/seed/champions/1200/600",
+      "imageHint": "soccer match"
+    },
+    {
+      "id": "dunk-highlight",
+      "description": "NBA Slam Dunk",
+      "imageUrl": "https://picsum.photos/seed/dunking/400/700",
+      "imageHint": "basketball dunk"
+    },
+    {
+      "id": "soccer-goal-highlight",
+      "description": "Soccer Goal Celebration",
+      "imageUrl": "https://picsum.photos/seed/goalll/400/700",
+      "imageHint": "soccer goal"
+    },
+    {
+      "id": "f1-highlight",
+      "description": "F1 Racing Action",
+      "imageUrl": "https://picsum.photos/seed/f1race/400/700",
+      "imageHint": "formula one"
+    }
+  ]
 }

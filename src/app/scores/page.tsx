@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -9,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Zap, Trophy, Timer, ChevronRight, BarChart3 } from "lucide-react";
+import { Zap, Trophy, Timer, ChevronRight } from "lucide-react";
 import { zportyAIGamePrediction } from "@/ai/flows/zporty-ai-game-prediction";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import {
@@ -23,21 +22,14 @@ import {
 
 const SCORES_DATA = {
   NBA: [
-    { id: "nba-1", home: "San Antonio Spurs", away: "New York Knicks", homeScore: 102, awayScore: 105, status: "Q4 2:14", details: "Game 7 - Finals", homeHint: "spurs basketball", awayHint: "knicks basketball" },
-    { id: "nba-2", home: "Boston Celtics", away: "Dallas Mavericks", homeScore: 112, awayScore: 98, status: "FINAL", details: "Eastern Conference Semis", homeHint: "celtics basketball", awayHint: "mavericks basketball" },
-    { id: "nba-3", home: "Phoenix Suns", away: "Denver Nuggets", homeScore: 85, awayScore: 92, status: "Q3 4:45", details: "Regular Season", homeHint: "suns basketball", awayHint: "nuggets basketball" },
+    { id: "nba-1", home: "San Antonio Spurs", away: "New York Knicks", homeScore: 102, awayScore: 105, status: "Q4 2:14", details: "Game 7 - Finals", homeLogoId: "sas-logo", awayLogoId: "nyk-logo" },
+    { id: "nba-2", home: "Boston Celtics", away: "Dallas Mavericks", homeScore: 112, awayScore: 98, status: "FINAL", details: "Eastern Conference Semis", homeLogoId: "bos-logo", awayLogoId: "dal-logo" },
   ],
   NFL: [
-    { id: "nfl-1", home: "Kansas City Chiefs", away: "San Francisco 49ers", homeScore: 24, awayScore: 21, status: "Q3 11:05", details: "Sunday Night Football", homeHint: "chiefs football", awayHint: "49ers football" },
-    { id: "nfl-2", home: "Buffalo Bills", away: "Miami Dolphins", homeScore: 31, awayScore: 34, status: "FINAL", details: "Division Rivalry", homeHint: "bills football", awayHint: "dolphins football" },
-  ],
-  MLB: [
-    { id: "mlb-1", home: "New York Yankees", away: "Los Angeles Dodgers", homeScore: 4, awayScore: 2, status: "FINAL", details: "Interleague Play", homeHint: "yankees baseball", awayHint: "dodgers baseball" },
-    { id: "mlb-2", home: "Chicago Cubs", away: "St. Louis Cardinals", homeScore: 1, awayScore: 5, status: "BOT 7", details: "NL Central", homeHint: "cubs baseball", awayHint: "cardinals baseball" },
+    { id: "nfl-1", home: "Kansas City Chiefs", away: "San Francisco 49ers", homeScore: 24, awayScore: 21, status: "Q3 11:05", details: "Sunday Night Football", homeLogoId: "kc-logo", awayLogoId: "sf-logo" },
   ],
   SOCCER: [
-    { id: "soc-1", home: "Real Madrid", away: "Manchester City", homeScore: 2, awayScore: 2, status: "82'", details: "Champions League", homeHint: "real madrid", awayHint: "manchester city" },
-    { id: "soc-2", home: "Arsenal", away: "Bayern Munich", homeScore: 1, awayScore: 0, status: "HT", details: "Champions League", homeHint: "arsenal", awayHint: "bayern munich" },
+    { id: "soc-1", home: "Real Madrid", away: "Manchester City", homeScore: 2, awayScore: 2, status: "82'", details: "Champions League", homeLogoId: "soccer-hero", awayLogoId: "soccer-hero" },
   ]
 };
 
@@ -59,6 +51,16 @@ export default function ScoresPage() {
     } finally {
       setIsPredicting(false);
     }
+  }
+
+  function getImageUrl(logoId: string) {
+    const img = PlaceHolderImages.find(p => p.id === logoId);
+    return img?.imageUrl || `https://picsum.photos/seed/${logoId}/64/64`;
+  }
+
+  function getImageHint(logoId: string) {
+    const img = PlaceHolderImages.find(p => p.id === logoId);
+    return img?.imageHint || "sports logo";
   }
 
   return (
@@ -113,12 +115,12 @@ export default function ScoresPage() {
                         <div className="flex flex-col items-center gap-2 flex-1">
                           <div className="h-16 w-16 rounded-full bg-secondary/50 relative overflow-hidden flex items-center justify-center">
                             <Image 
-                              src={`https://picsum.photos/seed/${game.away}/64/64`}
+                              src={getImageUrl(game.awayLogoId)}
                               alt={game.away}
                               width={64}
                               height={64}
                               className="object-cover"
-                              data-ai-hint={game.awayHint}
+                              data-ai-hint={getImageHint(game.awayLogoId)}
                             />
                           </div>
                           <span className="font-bold text-sm text-center line-clamp-1">{game.away}</span>
@@ -134,12 +136,12 @@ export default function ScoresPage() {
                         <div className="flex flex-col items-center gap-2 flex-1">
                           <div className="h-16 w-16 rounded-full bg-secondary/50 relative overflow-hidden flex items-center justify-center">
                             <Image 
-                              src={`https://picsum.photos/seed/${game.home}/64/64`}
+                              src={getImageUrl(game.homeLogoId)}
                               alt={game.home}
                               width={64}
                               height={64}
                               className="object-cover"
-                              data-ai-hint={game.homeHint}
+                              data-ai-hint={getImageHint(game.homeLogoId)}
                             />
                           </div>
                           <span className="font-bold text-sm text-center line-clamp-1">{game.home}</span>
