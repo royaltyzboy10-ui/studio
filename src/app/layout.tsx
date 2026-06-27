@@ -1,10 +1,13 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { Navbar } from "@/components/layout/Navbar";
 
-import type {Metadata} from 'next';
-import './globals.css';
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Sport.co | Ultimate Sports Platform',
-  description: 'Live scores, breaking news, AI predictions and more.',
+  title: "New Project | Fresh Start",
+  description: "A clean slate for your next big idea.",
 };
 
 export default function RootLayout({
@@ -13,14 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased bg-background text-foreground">
-        {children}
+    <html lang="en">
+      <body className={inter.className}>
+        <div className="relative flex min-h-screen flex-col">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+        </div>
       </body>
     </html>
   );
